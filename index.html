@@ -51,24 +51,124 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+
+      /* ===== Hero a ancho completo en móvil (iPhone) ===== */
+      /* En pantallas menores a 640px el hero ocupa todo el ancho de la
+         pantalla (sin márgenes laterales ni espacio superior).
+         En escritorio (>= 640px) se conserva el diseño actual. */
+      @media (max-width: 639px) {
+        #inicio {
+          position: relative;
+          left: 50%;
+          right: 50%;
+          margin-left: -50vw;
+          margin-right: -50vw;
+          width: 100vw;
+          padding-top: 0;
+          margin-top: -1.25rem; /* Compensa el py-5 del contenedor padre */
+        }
+      }
+
+      /* ===== Menú hamburguesa estilo Apple (solo móvil) ===== */
+      /* En escritorio (>= 640px) la navbar muestra los enlaces como siempre.
+         En móvil (< 640px) los enlaces se ocultan y el botón hamburguesa
+         abre un menú de pantalla completa con animación escalonada,
+         como en apple.com */
+
+      /* Líneas del botón hamburguesa */
+      .menu-line {
+        display: block;
+        width: 18px;
+        height: 1.5px;
+        border-radius: 2px;
+        background-color: #181311;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      /* El icono se convierte en una X cuando el menú está abierto */
+      body.menu-open .menu-line {
+        background-color: #f5f5f7;
+      }
+      body.menu-open .menu-line:nth-child(1) {
+        transform: translateY(3.75px) rotate(45deg);
+      }
+      body.menu-open .menu-line:nth-child(2) {
+        transform: translateY(-3.75px) rotate(-45deg);
+      }
+
+      /* Overlay de pantalla completa */
+      #mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 40; /* Debajo del header (z-50): logo y botón siguen visibles */
+        background-color: rgba(22, 22, 23, 0.9);
+        -webkit-backdrop-filter: saturate(180%) blur(20px);
+        backdrop-filter: saturate(180%) blur(20px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.35s ease, visibility 0s linear 0.35s;
+      }
+      body.menu-open #mobile-menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transition: opacity 0.35s ease;
+      }
+
+      /* La navbar se integra al fondo oscuro cuando el menú está abierto */
+      body.menu-open #site-header {
+        background-color: transparent;
+        border-color: transparent;
+      }
+      body.menu-open #navbar-inner {
+        background-color: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+      body.menu-open .nav-brand {
+        color: #f5f5f7;
+      }
+
+      /* Bloquear el scroll del fondo mientras el menú está abierto */
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      /* Animación escalonada de los enlaces (como apple.com) */
+      .mobile-link {
+        opacity: 0;
+        transform: translateY(-14px);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+      }
+      body.menu-open .mobile-link {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      body.menu-open #mobile-menu li:nth-child(1) { transition-delay: 0.15s; }
+      body.menu-open #mobile-menu li:nth-child(2) { transition-delay: 0.21s; }
+      body.menu-open #mobile-menu li:nth-child(3) { transition-delay: 0.27s; }
+      body.menu-open #mobile-menu li:nth-child(4) { transition-delay: 0.33s; }
+      body.menu-open #mobile-menu .mobile-secondary { transition-delay: 0.42s; }
     </style>
   </head>
   <body class="bg-background-light antialiased">
     <!-- Navbar separado -->
-    <header class="w-full bg-white border-b border-solid border-b-[#f4f1f0] sticky top-0 z-50">
-      <div class="flex items-center justify-between whitespace-nowrap px-10 lg:px-20 xl:px-40 py-3 bg-white/80 backdrop-blur-md">
-        <div class="flex items-center gap-4 text-[#181311]">
+    <header id="site-header" class="w-full bg-white border-b border-solid border-b-[#f4f1f0] sticky top-0 z-50">
+      <div id="navbar-inner" class="flex items-center justify-between whitespace-nowrap px-10 lg:px-20 xl:px-40 py-3 bg-white/80 backdrop-blur-md">
+        <a href="#inicio" class="nav-brand flex items-center gap-4 text-[#181311]">
           <div class="size-4">
             <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor">
               </path>
             </svg>
           </div>
-          <h2 class="text-[#181311] text-lg font-bold leading-tight tracking-[-0.015em]">
+          <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">
             coru
           </h2>
-        </div>
-        <div class="flex flex-1 justify-end gap-8">
+        </a>
+        <!-- Enlaces de escritorio (ocultos en móvil) -->
+        <div class="hidden sm:flex flex-1 justify-end gap-8">
           <div class="flex items-center gap-9">
             <a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#inicio">
               Inicio
@@ -84,8 +184,45 @@
             </a>
           </div>
         </div>
+        <!-- Botón hamburguesa (solo móvil) -->
+        <button id="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="sm:hidden flex flex-col items-center justify-center gap-[6px] w-10 h-10 shrink-0 cursor-pointer bg-transparent border-0 p-0">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
       </div>
     </header>
+
+    <!-- Menú móvil de pantalla completa (estilo Apple, solo < 640px) -->
+    <nav id="mobile-menu" aria-label="Menú móvil">
+      <ul class="flex flex-col items-start gap-7 px-8 pt-24">
+        <li class="mobile-link">
+          <a class="text-[#f5f5f7] text-[28px] leading-tight font-semibold tracking-tight hover:text-white transition-colors" href="#inicio">
+            Inicio
+          </a>
+        </li>
+        <li class="mobile-link">
+          <a class="text-[#f5f5f7] text-[28px] leading-tight font-semibold tracking-tight hover:text-white transition-colors" href="#solucion">
+            Solución
+          </a>
+        </li>
+        <li class="mobile-link">
+          <a class="text-[#f5f5f7] text-[28px] leading-tight font-semibold tracking-tight hover:text-white transition-colors" href="#beneficios">
+            Beneficios
+          </a>
+        </li>
+        <li class="mobile-link">
+          <a class="text-[#f5f5f7] text-[28px] leading-tight font-semibold tracking-tight hover:text-white transition-colors" href="#experiencia">
+            Experiencia
+          </a>
+        </li>
+      </ul>
+      <div class="mobile-link mobile-secondary mt-12 px-8">
+        <a class="inline-flex items-center gap-2 text-[#f5f5f7]/60 text-base font-medium hover:text-[#f5f5f7] transition-colors" href="/demo">
+          Prueba gratis
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+      </div>
+    </nav>
     
     <!-- Contenido principal -->
     <div class="relative flex h-auto w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
@@ -95,7 +232,7 @@
             <!-- Hero Section with Video -->
             <div id="inicio" class="@container pt-4 lg:pt-6">
               <div class="p-0">
-                <div class="relative flex min-h-[560px] flex-col overflow-hidden bg-black rounded-3xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+                <div class="relative flex min-h-[560px] flex-col overflow-hidden bg-black rounded-none sm:rounded-3xl border-0 sm:border sm:border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
                   <!-- Video Background con placeholder -->
                   <video 
                     id="hero-video"
@@ -468,6 +605,46 @@
           testimonialVideo.addEventListener('ended', function() {
             this.currentTime = 0;
             this.play();
+          });
+        }
+
+        // ===== Menú hamburguesa estilo Apple =====
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        const closeMobileMenu = function() {
+          document.body.classList.remove('menu-open');
+          if (menuToggle) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Abrir menú');
+          }
+        };
+
+        if (menuToggle && mobileMenu) {
+          // Abrir / cerrar con el botón hamburguesa
+          menuToggle.addEventListener('click', function() {
+            const isOpen = document.body.classList.toggle('menu-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+          });
+
+          // Cerrar al tocar un enlace del menú
+          mobileMenu.querySelectorAll('a').forEach(function(link) {
+            link.addEventListener('click', closeMobileMenu);
+          });
+
+          // Cerrar con la tecla Escape
+          document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+              closeMobileMenu();
+            }
+          });
+
+          // Cerrar automáticamente si se pasa a tamaño escritorio
+          window.addEventListener('resize', function() {
+            if (window.innerWidth >= 640) {
+              closeMobileMenu();
+            }
           });
         }
       });
