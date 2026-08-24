@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>coru - Gestión normativa inteligente</title>
+<!-- Fonts Locales -->
+<link rel="stylesheet" href="css/plus-jakarta-sans.css">
+<link rel="stylesheet" href="css/material-symbols-outlined-local.css">
+<!-- Tailwind CSS Local -->
+<script src="css/tailwind.js"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#cf4817",
+              "background-light": "#f8f6f6",
+              "background-dark": "#211511",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light antialiased">
+<!-- Shared Component: TopNavBar (Used as the page structure as provided) -->
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style="font-family: &quot;Plus Jakarta Sans&quot;, &quot;Noto Sans&quot;, sans-serif;">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f4f1f0] px-10 py-2 bg-white/80 backdrop-blur-md z-50">
+<div class="flex items-center gap-4 text-[#181311]">
+<div class="size-4">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#181311] text-lg font-bold leading-tight tracking-[-0.015em]">coru</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#">Inicio</a>
+<a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#">Solución</a>
+<a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#">Beneficios</a>
+<a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#">Casos de uso</a>
+<a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#">Demo</a>
+<a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#">Contacto</a>
+</div>
+</div>
+</header>
+<!-- Restored Hero Section from SCREEN_20 -->
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="relative flex min-h-[560px] flex-col overflow-hidden bg-black @[480px]:rounded-3xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+<div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90" data-alt="A cinematic, golden-hour photograph of a construction site manager in Chile standing on a dusty, active construction site. He is wearing a white hardhat and high-visibility vest, focused on a modern tablet device. The lighting is warm and natural, casting long, soft shadows over the concrete and steel rebar in the background. The aesthetic is highly professional, human-centric, and grounded in reality, matching a modern terracotta and warm sand brand identity." style="background-image: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.2) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWdeeoU4mp45fBrP2Tue5Z67jU-YjOUrnF0wmTBvzKHQwHDyYhd4a5B1ae40u_wtjE9lE8bMFXHWOxPT7xL0TKWLqCnGDZK2N8PCi-FSY6UEbzHU4KHqM70cjRG7x3wFa8mNdvicmUArs2SfQNoIF8q3oXQNkLn4tOklF4AbQTyuEPqUb3tZ9nmzfZ8Ku4slqzmJbNfe9nQB6e6czjq0hq6CBKW4TNl1BMUZwZtUM2wuENQ2Y_An8');"></div>
+<div class="relative z-10 flex flex-1 flex-col justify-end p-8 @[480px]:p-12">
+<div class="flex flex-col @[768px]:flex-row items-end justify-between gap-8 w-full">
+<div class="flex flex-col gap-2 text-left max-w-2xl">
+<span class="text-white text-xl font-semibold tracking-tight">coru</span>
+<h1 class="text-white text-4xl font-bold leading-tight tracking-[-0.02em] @[480px]:text-5xl @[768px]:text-6xl text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70">
+                                      Gestión normativa<br>inteligente para obras<br>en Chile.
+                                    </h1>
+<h2 class="text-[#a1a1a6] text-lg font-medium leading-relaxed mt-2 max-w-xl">
+                                      Automatización, trazabilidad total y sincronización offline para que la obra nunca se detenga.
+                                    </h2>
+</div>
+<div class="flex items-center gap-5 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 p-2 pr-2 pl-6 shadow-2xl w-full @[768px]:w-auto justify-between @[768px]:justify-start">
+<span class="text-white/80 text-sm font-medium">Comienza a optimizar tu obra</span>
+<button class="flex cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-white/10 backdrop-blur-xl border border-white/20 text-white text-sm font-bold shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:bg-white/20 transition-colors">
+<span class="truncate">Prueba gratis</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Updated Bento Grid Problem Section (White background) -->
+<div class="flex flex-col gap-12 px-4 py-20 @container bg-white -ml-[50vw] -mr-[50vw] left-1/2 right-1/2 relative w-screen border-b border-[#e5dedc]">
+<div class="flex flex-col gap-4 px-40">
+<h2 class="text-[#1D1D1F] tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-4">
+      El costo oculto de la gestión manual
+    </h2>
+<p class="text-[#1D1D1F]/70 text-lg max-w-2xl">Elimina los riesgos y sobrecostos de la administración tradicional con tecnología de vanguardia.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 px-40">
+<!-- Large Featured Block: ID Scanning -->
+<div class="md:col-span-7 relative aspect-[4/3] rounded-[32px] overflow-hidden border border-black/10 bg-gray-50 group">
+<div class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-700 group-hover:scale-105" style="background-image: url('https://lh3.googleusercontent.com/aida/AEtjO1X371NT2ptEPHfTlgC76aachfXggx9ffMdGysv-Ke09Zu7aaGTrCXn74zyzj7U3ivKPJefGrr7UEOdh7aqjvU9P_jymWhxxhn7uQ9HIh1isxZJDmGwb9trFeZEkAQ_4LClyRpgMqupg3RXE_KJJLuEgvMlKlssJZqhcSITQpdFmx4cPq4JcxKk0g99FTmp2ZZ6ex8TWGkiWmGPwHNKfQRrmQWMUp9iVVPcKUpO9dy-DC-YMU6Y4dr8wLg');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 z-10">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-white">document_scanner</span>
+<h3 class="text-white text-2xl font-bold tracking-tight">Extracción IA de documentos</h3>
+</div>
+<p class="text-white/90 text-lg leading-relaxed max-w-md">Procesa contratos y normativas automáticamente con precisión quirúrgica. Veloz por naturaleza.</p>
+</div>
+</div>
+<!-- Right Column: Two smaller blocks -->
+<div class="md:col-span-5 flex flex-col gap-6">
+<!-- Predictive Alerts Block -->
+<div class="relative flex-1 rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-between group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-3">
+<span class="material-symbols-outlined text-[#1D1D1F]">analytics</span>
+<h3 class="text-[#1D1D1F] text-xl font-bold tracking-tight">Analítica predictiva</h3>
+</div>
+<p class="text-[#1D1D1F]/70 text-base leading-relaxed">Anticipa problemas de cumplimiento antes de que ocurran mediante modelos de riesgo avanzados.</p>
+</div>
+<div class="mt-6 rounded-xl overflow-hidden border border-black/5 shadow-lg transition-transform duration-500 group-hover:-translate-y-2">
+<img alt="Predictive Dashboard" class="w-full h-auto object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1VQ3hb4s8octRcm82Dezeury4O6UhMFLCXPgOnU4ktIKvGli5svdeLtCazPUpaIT4UyiqOEzUmy9LDPxsrka6_LQqdAftEd-7chNQYsf7mBKjdNUH6flNmdyp1cGoqnChkJGqwlY-L2V9RRz5Nl3Ck1SR6KmsX6zzLZyGLiVIixspJJs7G_ryvwHWldzmnwyRFZO2W_T4nttdIwOZfOgZdn9m7HnX7ZrqqzBEA3tDRjpuRJHCEh0P6SCg">
+</div>
+</div>
+<!-- Offline-first Block -->
+<div class="relative h-48 rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-center group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+<div class="flex items-center gap-4 relative z-10">
+<div class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center border border-black/5 backdrop-blur-xl">
+<span class="material-symbols-outlined text-[#1D1D1F]">signal_wifi_off</span>
+</div>
+<div>
+<h3 class="text-[#1D1D1F] text-xl font-bold tracking-tight">Sincronización offline-first</h3>
+<p class="text-[#1D1D1F]/60 text-sm mt-1">Continuidad operativa total sin conexión.</p>
+</div>
+</div>
+<div class="absolute bottom-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
+<span class="material-symbols-outlined text-black text-6xl">cloud_sync</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-black overflow-hidden py-20">
+<div class="px-40 mb-12">
+<h2 class="text-white tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-4">Automatiza lo que hoy haces a mano</h2>
+<p class="text-white/60 text-lg max-w-2xl">Nuestra plataforma se encarga del trabajo pesado para que te enfoques en la obra.</p>
+</div>
+<div class="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide gap-8 px-10 md:px-20 pb-12 items-start">
+<!-- Card 1: Extracción IA -->
+<div class="flex-shrink-0 w-[75vw] snap-center">
+<div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAgqum4ZVh3HmHK1LcTtGavS_XuDI8d66sDlXx4917NUkGFg_6NwfjPwkQSfq66JZMbbPl-NAbtWvYVp6JjR3jUwKTv5EON0E_6A0RcIxNJ9gorjy7reqYO6bHRw5E2DGCLLtCh83gE0u48Gg6VaHOvpqFCVh6ApSFUPT5T6LgMu36i39jFfV5SHgZqha_imM7SpvDsba5SevZHJmXWvrHm8-CyGddS9JJ4togT1fTuD03oEGefJ64');"></div>
+</div>
+<div class="max-w-2xl">
+<h3 class="text-white text-2xl font-bold mb-2 tracking-tight">Extracción IA de documentos.</h3>
+<p class="text-white/60 text-lg leading-relaxed">Procesa contratos y normativas automáticamente con precisión quirúrgica. Veloz por naturaleza.</p>
+</div>
+</div>
+<!-- Card 2: Analítica predictiva -->
+<div class="flex-shrink-0 w-[75vw] snap-center">
+<div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCU25r2MaAqoaIYr1fGYV6v3Y-T_TGJ6Oty7zZvoID_LVnWy91x-oempi0hW-OOV-RDlTrbGw1N9jBXWeFezF_v524rbTBagnpY9kooIlyavh915kykytBMyQn5AbpLt1O-_4_96pXlk_7JOUhH_qt4taSUBxCR5T7cwAglo28V8HyT6TmfJIzjg0k2BDgsf3IhAbs7nlo8fnuv3HMgba00a4kEhWOdUmXVsy2cbWfZvucCDOEdv58');"></div>
+</div>
+<div class="max-w-2xl">
+<h3 class="text-white text-2xl font-bold mb-2 tracking-tight">Analítica predictiva.</h3>
+<p class="text-white/60 text-lg leading-relaxed">Anticipa problemas de cumplimiento antes de que ocurran mediante modelos de riesgo avanzados. Claramente inconfundible.</p>
+</div>
+</div>
+<!-- Card 3: Sincronización offline-first -->
+<div class="flex-shrink-0 w-[75vw] snap-center">
+<div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+<div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDXGzYspSx-YKC8OjfoDoJVz7lsRYH0Qhr20J5dUB54Kbi7PR1GiVXx5nOMkne1LBxWYSqklfgwjY4-v-ybwZvDEnNo-bga_XgUbfJpMpYT1e7I_uIG50ULxuQ17d-hx80vXgU1o4aoyFLSKEqjm_cGXDWQHkmaYZlpB4bNGtMEppps5GC7RfAN6rqHhlFm0GVhnK4KuXp0j9Es0xDnagQcyNfSVeYmDR16xFlqMrw_SVPwsRGUCY4');"></div>
+</div>
+<div class="max-w-2xl">
+<h3 class="text-white text-2xl font-bold mb-2 tracking-tight">Sincronización offline-first.</h3>
+<p class="text-white/60 text-lg leading-relaxed">Sigue trabajando sin conexión y sincroniza cuando tengas señal, garantizando la continuity operativa.</p>
+</div>
+</div>
+</div>
+<!-- Navigation Controls -->
+<div class="flex justify-end gap-4 px-40 mt-4">
+<button class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+<div class="flex flex-col md:flex-row gap-12 px-4 py-20 border-t border-[#e5dedc]">
+<div class="flex flex-1 flex-col gap-4">
+<p class="text-[#886d63] text-sm font-semibold uppercase tracking-widest">Eficiencia</p>
+<p class="text-[#181311] text-6xl font-black tracking-tighter">70%</p>
+<p class="text-[#181311] text-lg font-medium">Menos tiempo en auditorías</p>
+</div>
+<div class="flex flex-1 flex-col gap-4">
+<p class="text-[#886d63] text-sm font-semibold uppercase tracking-widest">Operación</p>
+<p class="text-[#181311] text-6xl font-black tracking-tighter">40%</p>
+<p class="text-[#181311] text-lg font-medium">Ahorro en costos administrativos</p>
+</div>
+<div class="flex flex-1 flex-col gap-4">
+<p class="text-[#886d63] text-sm font-semibold uppercase tracking-widest">Seguridad</p>
+<p class="text-[#181311] text-6xl font-black tracking-tighter">100%</p>
+<p class="text-[#181311] text-lg font-medium">Disponibilidad de documentos</p>
+</div>
+</div>
+<!-- Testimonials Section -->
+<section class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-white py-24 border-t border-[#e5dedc]">
+<div class="px-40 flex flex-col items-center">
+<h2 class="text-[#1D1D1F] tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-16 text-center max-w-4xl mx-auto">Invitando a que pruebes la plataforma<br>y nos cuentes tu experiencia.</h2>
+<div class="flex flex-col items-center w-full max-w-5xl">
+  <div class="w-full rounded-[32px] overflow-hidden shadow-2xl border border-black/5 mb-16">
+    <img src="https://lh3.googleusercontent.com/aida/AEtjO1VnCHhPVPq2K0OkyOk21ajIV1S8CA-NrCwGXV7jtcA_hubn2hHJhPEloqRxPxNLLRLan-DyPSQjVeFs7Xwj9r5YjPgebvRkle9bu-vgxFAgU7GMzNp9-SuZ1NKXnxcEl2OSjAY77t08zY-AFe2ccdefK--9BYqVBImDhffV-rvz8qASgrthwSJAsYtdtQZhGUjqIH6OKnLudFGVI8HMPC3dJNllesrvT5ZSFKDYHwDYOLxRtJqdHkSVNw" alt="FaceTime call with project manager" class="w-full h-auto object-cover">
+  </div>
+  <div class="max-w-3xl text-center">
+    <p class="text-[#1D1D1F] text-2xl md:text-3xl leading-relaxed font-medium italic mb-8 tracking-tight">
+      "La plataforma ha transformado completamente cómo manejamos la documentación en terreno. Ya no perdemos horas buscando permisos impresos."
+    </p>
+    <div class="flex flex-col items-center gap-2">
+      <h4 class="text-[#1D1D1F] font-bold text-xl">Carlos M.</h4>
+      <p class="text-[#1D1D1F]/60 text-base uppercase tracking-widest font-semibold">Jefe de Terreno</p>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-black py-32 flex justify-center text-center">
+<div class="max-w-3xl px-8 flex flex-col items-center">
+<h2 class="text-white tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-6">
+      ¿Listo para digitalizar la gestión normativa de tu obra?
+    </h2>
+<p class="text-white/70 text-xl mb-12">
+      Prueba nuestra plataforma sin costo. sin compromiso.
+    </p>
+<button class="flex cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-white/10 backdrop-blur-xl border border-white/20 text-white text-lg font-bold shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:bg-white/20 transition-colors">
+<span class="">Quiero probarla ahora</span>
+</button>
+</div>
+</section>
+<!-- Footer Section -->
+<footer class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#111] py-16 border-t border-white/10">
+<div class="px-40 flex flex-col md:flex-row justify-between gap-12 mb-16">
+<div class="flex flex-col gap-6">
+<h3 class="text-white font-bold text-xl">coru</h3>
+<div class="flex flex-col gap-3">
+<a class="text-white/70 hover:text-white transition-colors text-sm" href="#">Inicio</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm" href="#">Solución</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm" href="#">Beneficios</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm" href="#">Casos de uso</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm" href="#">Demo</a>
+<a class="text-white/70 hover:text-white transition-colors text-sm" href="#">Contacto</a>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<h3 class="text-white font-bold text-xl">Contacto</h3>
+<div class="flex flex-col gap-3">
+<a class="text-white/70 hover:text-white transition-colors text-sm" href="mailto:piloto@coru.cl">Email: piloto@coru.cl</a>
+</div>
+</div>
+</div>
+<div class="px-40 border-t border-white/10 pt-8 flex justify-between items-center">
+<p class="text-white/50 text-sm">© 2026 coru. Todos los derechos reservados.</p>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+
+</body></html>

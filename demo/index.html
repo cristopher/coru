@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>coru - Agendar Demo</title>
+<!-- Google Fonts -->
+    <link rel="stylesheet" href="../css/plus-jakarta-sans.css">
+<!-- Material Symbols -->
+    <link rel="stylesheet" href="../css/material-symbols-outlined-local.css">
+<!-- Tailwind CSS Local -->
+<script src="../css/tailwind.js"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2C2A29",
+              "background-light": "#F9F6F0",
+              "background-dark": "#2C2A29",
+              "surface": "rgba(255, 255, 255, 0.6)",
+              "text-main": "#2C2A29",
+              "text-muted": "#8A837D",
+              "accent": "#4A6B53"
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {
+              "card": "24px",
+              "pill": "100px"
+            },
+            boxShadow: {
+              "glass": "0 12px 40px rgba(44, 42, 41, 0.08)"
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Custom Styles for Form */
+        .floating-input {
+            transition: border-color 0.3s ease;
+        }
+        
+        .floating-input:focus {
+            border-bottom-color: #2C2A29;
+            outline: none;
+        }
+
+        .floating-label {
+            transition: all 0.2s ease-out;
+            pointer-events: none;
+        }
+
+        .floating-input:focus + .floating-label,
+        .floating-input:not(:placeholder-shown) + .floating-label {
+            transform: translateY(-24px) scale(0.75);
+            color: #2C2A29;
+        }
+        
+        .glass-btn {
+            transition: all 0.3s ease;
+        }
+        
+        .glass-btn:hover {
+            background-color: #1a1918;
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-background-light font-body text-text-main h-screen overflow-hidden">
+<!-- Minimal Header (Back to Main) -->
+<header class="absolute top-0 left-0 w-full z-50 p-6 flex justify-between items-center pointer-events-none">
+<div class="pointer-events-auto">
+<a class="flex items-center gap-2 text-text-main hover:text-primary transition-colors backdrop-blur-md px-4 py-2 rounded-pill border border-black/10 bg-transparent" href="coru.cl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+<span class="font-medium">Volver</span>
+</a>
+</div>
+</header>
+<main class="flex h-full w-full">
+<!-- Left Side: Booking Form -->
+<div class="w-full md:w-1/2 h-full flex flex-col justify-center items-center p-6 md:p-12 lg:p-24 overflow-y-auto bg-background-light relative z-10">
+<!-- Mobile Logo (Visible only on mobile/tablet) -->
+<div class="md:hidden flex items-center gap-3 text-text-main mb-12 w-full max-w-[480px]">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="font-heading text-2xl font-bold tracking-tight">coru</h2>
+</div>
+<div class="w-full max-w-[480px]">
+<h1 class="font-heading text-4xl md:text-[48px] font-medium leading-tight mb-2 text-text-main">
+                    ¿Listo para digitalizar?
+                </h1>
+<p class="text-text-muted text-lg mb-10 font-body">
+                    Agenda una demostración personalizada de coru para tu obra.
+                </p>
+<form class="space-y-8" id="booking-form" onsubmit="event.preventDefault(); submitForm();">
+<!-- Nombre Input -->
+<div class="relative pt-4">
+<input class="floating-input block w-full bg-transparent border-0 border-b border-text-muted text-text-main text-lg focus:ring-0 px-0 py-2 placeholder-transparent" id="nombre" name="nombre" placeholder=" " required="" type="text">
+<label class="floating-label absolute left-0 top-6 text-text-muted text-lg origin-left" for="nombre">
+                            Nombre completo
+                        </label>
+</div>
+<!-- Empresa Input -->
+<div class="relative pt-4">
+<input class="floating-input block w-full bg-transparent border-0 border-b border-text-muted text-text-main text-lg focus:ring-0 px-0 py-2 placeholder-transparent" id="empresa" name="empresa" placeholder=" " required="" type="text">
+<label class="floating-label absolute left-0 top-6 text-text-muted text-lg origin-left" for="empresa">
+                            Empresa constructora
+                        </label>
+</div>
+<!-- Email Input -->
+<div class="relative pt-4">
+<input class="floating-input block w-full bg-transparent border-0 border-b border-text-muted text-text-main text-lg focus:ring-0 px-0 py-2 placeholder-transparent" id="email" name="email" placeholder=" " required="" type="email">
+<label class="floating-label absolute left-0 top-6 text-text-muted text-lg origin-left" for="email">
+                            Correo electrónico
+                        </label>
+</div>
+<!-- Teléfono Input -->
+<div class="relative pt-4">
+<input class="floating-input block w-full bg-transparent border-0 border-b border-text-muted text-text-main text-lg focus:ring-0 px-0 py-2 placeholder-transparent" id="telefono" name="telefono" placeholder=" " required="" type="tel">
+<label class="floating-label absolute left-0 top-6 text-text-muted text-lg origin-left" for="telefono">
+                            Teléfono
+                        </label>
+</div>
+<!-- Submit Button -->
+<div class="pt-6">
+<button class="glass-btn w-full bg-[#2C2A29]/90 text-white font-bold text-lg py-4 rounded-pill shadow-lg flex items-center justify-center gap-2 backdrop-blur-md border border-white/20" id="submit-btn" type="submit">
+<span class="">Agendar Demo</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+<!-- Success State (Hidden initially) -->
+<div class="hidden flex-col items-center justify-center py-8 text-center animate-fade-in" id="success-message">
+<div class="size-16 rounded-full bg-accent/20 text-accent flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h3 class="font-heading text-2xl font-medium text-text-main mb-2">¡Solicitud enviada!</h3>
+<p class="text-text-muted">Te contactaremos en breve para coordinar el horario.</p>
+</div>
+</form>
+</div>
+</div>
+<!-- Right Side: Immersive Image (Hidden on tablet/mobile) -->
+<div class="hidden md:block w-1/2 h-full relative bg-black">
+<img alt="Professional construction project manager" class="absolute inset-0 w-full h-full object-cover opacity-90" src="images/professional_portrait_of_a_latino_construction_project_manager_or_safety.jpg">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<!-- Logo Floating over image -->
+<div class="absolute bottom-12 right-12">
+<div class="flex items-center gap-3 text-white">
+<div class="size-8">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="font-heading text-3xl font-bold tracking-tight">coru</h2>
+</div>
+</div>
+</div>
+</main>
+<script>
+        function submitForm() {
+            const btn = document.getElementById('submit-btn');
+            const formInputs = document.querySelectorAll('.floating-input');
+            const successMsg = document.getElementById('success-message');
+            
+            // Loading state
+            btn.innerHTML = '<span class="material-symbols-outlined animate-spin" style="font-variation-settings: \'FILL\' 0;">sync</span>';
+            btn.style.opacity = '0.7';
+            
+            // Simulate network request
+            setTimeout(() => {
+                // Hide inputs and button
+                formInputs.forEach(input => input.parentElement.style.display = 'none');
+                btn.parentElement.style.display = 'none';
+                
+                // Show success
+                successMsg.classList.remove('hidden');
+                successMsg.classList.add('flex');
+            }, 1500);
+        }
+    </script>
+
+
+</body></html>

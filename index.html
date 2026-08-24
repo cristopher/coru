@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>
+      coru - Gestión normativa inteligente
+    </title>
+    <!-- Fonts Locales -->
+    <link rel="stylesheet" href="css/plus-jakarta-sans.css">
+    <link rel="stylesheet" href="css/material-symbols-outlined-local.css">
+    <!-- Tailwind CSS Local -->
+    <script src="css/tailwind.js">
+    </script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#cf4817",
+              "background-light": "#f8f6f6", 
+              "background-dark": "#211511",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.5rem", 
+              "lg": "1rem", 
+              "xl": "1.5rem", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 60px; /* Ajuste para compensar el navbar fijo */
+      }
+      
+      /* Ocultar scrollbar pero mantener funcionalidad de scroll */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body class="bg-background-light antialiased">
+    <!-- Navbar separado -->
+    <header class="w-full bg-white border-b border-solid border-b-[#f4f1f0] sticky top-0 z-50">
+      <div class="flex items-center justify-between whitespace-nowrap px-10 lg:px-20 xl:px-40 py-3 bg-white/80 backdrop-blur-md">
+        <div class="flex items-center gap-4 text-[#181311]">
+          <div class="size-4">
+            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor">
+              </path>
+            </svg>
+          </div>
+          <h2 class="text-[#181311] text-lg font-bold leading-tight tracking-[-0.015em]">
+            coru
+          </h2>
+        </div>
+        <div class="flex flex-1 justify-end gap-8">
+          <div class="flex items-center gap-9">
+            <a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#inicio">
+              Inicio
+            </a>
+            <a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#solucion">
+              Solución
+            </a>
+            <a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#beneficios">
+              Beneficios
+            </a>
+            <a class="text-[#181311] text-sm font-medium leading-normal hover:text-black transition-colors" href="#experiencia">
+              Experiencia
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- Contenido principal -->
+    <div class="relative flex h-auto w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Plus Jakarta Sans", "Noto Sans", sans-serif;'>
+      <div class="layout-container flex h-full grow flex-col">
+        <div class="px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col w-full max-w-[1200px] flex-1">
+            <!-- Hero Section with Video -->
+            <div id="inicio" class="@container pt-4 lg:pt-6">
+              <div class="p-0">
+                <div class="relative flex min-h-[560px] flex-col overflow-hidden bg-black rounded-3xl border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+                  <!-- Video Background con placeholder -->
+                  <video 
+                    id="hero-video"
+                    class="absolute inset-0 w-full h-full object-cover opacity-90"
+                    autoplay 
+                    loop 
+                    muted 
+                    playsinline
+                    poster="images/hero-image.jpg"
+                  >
+                    <source src="video/Professionals_working_at_constru…_202608232251.mp4" type="video/mp4">
+                    <!-- Fallback a imagen si el video no carga -->
+                  </video>
+                  <!-- Gradiente overlay -->
+                  <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-black/20 z-[1]"></div>
+                  <div class="relative z-10 flex flex-1 flex-col justify-end p-8 lg:p-12 xl:p-16">
+                    <div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 w-full">
+                      <div class="flex flex-col gap-3 text-left max-w-2xl">
+                        <span class="text-white text-base lg:text-lg font-semibold tracking-tight">
+                          coru
+                        </span>
+                        <h1 class="text-white text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-[-0.02em]">
+                          Gestión normativa<br>
+                          inteligente para obras<br>
+                          en Chile.
+                        </h1>
+                        <h2 class="text-[#a1a1a6] text-base lg:text-lg font-normal leading-relaxed mt-2 max-w-lg">
+                          Automatización, trazabilidad total y sincronización offline para que la obra nunca se detenga.
+                        </h2>
+                      </div>
+                      <div class="flex items-center gap-4 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-3 shadow-xl shrink-0">
+                        <span class="text-white/90 text-sm font-medium whitespace-nowrap">
+                          Comienza a optimizar tu obra
+                        </span>
+                        <button class="flex cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-white/90 hover:bg-white text-[#181311] text-sm font-semibold shadow-lg hover:shadow-xl transition-all">
+                          <span class="truncate">
+                            Prueba gratis
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Updated Bento Grid Problem Section (White background) -->
+            <div id="solucion" class="flex flex-col gap-12 px-4 py-20 @container bg-white -ml-[50vw] -mr-[50vw] left-1/2 right-1/2 relative w-screen border-b border-[#e5dedc]">
+              <div class="flex flex-col gap-4 px-10 lg:px-20 xl:px-40">
+                <h2 class="text-[#1D1D1F] tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-4">
+                  El costo oculto de la gestión manual
+                </h2>
+                <p class="text-[#1D1D1F]/70 text-lg max-w-2xl">
+                  Elimina los riesgos y sobrecostos de la administración tradicional con tecnología de vanguardia.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 px-10 lg:px-20 xl:px-40">
+                <!-- Large Featured Block: ID Scanning -->
+                <div class="md:col-span-7 relative aspect-[4/3] rounded-[32px] overflow-hidden border border-black/10 bg-gray-50 group">
+                  <div class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-700 group-hover:scale-105" style="background-image: url('images/extraccion-ia.jpg');">
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
+                  </div>
+                  <div class="absolute bottom-8 left-8 right-8 z-10">
+                    <div class="flex items-center gap-3 mb-3">
+                      <span class="material-symbols-outlined text-white">
+                        document_scanner
+                      </span>
+                      <h3 class="text-white text-2xl font-bold tracking-tight">
+                        Extracción IA de documentos
+                      </h3>
+                    </div>
+                    <p class="text-white/90 text-lg leading-relaxed max-w-md">
+                      Procesa contratos y normativas automáticamente con precisión quirúrgica. Veloz por naturaleza.
+                    </p>
+                  </div>
+                </div>
+                <!-- Right Column: Two smaller blocks -->
+                <div class="md:col-span-5 flex flex-col gap-6">
+                  <!-- Predictive Alerts Block -->
+                  <div class="relative flex-1 rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-between group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div class="relative z-10">
+                      <div class="flex items-center gap-3 mb-3">
+                        <span class="material-symbols-outlined text-[#1D1D1F]">
+                          analytics
+                        </span>
+                        <h3 class="text-[#1D1D1F] text-xl font-bold tracking-tight">
+                          Analítica predictiva
+                        </h3>
+                      </div>
+                      <p class="text-[#1D1D1F]/70 text-base leading-relaxed">
+                        Anticipa problemas de cumplimiento antes de que ocurran mediante modelos de riesgo avanzados.
+                      </p>
+                    </div>
+                    <div class="mt-6 rounded-xl overflow-hidden border border-black/5 shadow-lg transition-transform duration-500 group-hover:-translate-y-2">
+                      <img alt="Predictive Dashboard" class="w-full h-auto object-cover" src="images/dashboard-predictivo.jpg">
+                    </div>
+                  </div>
+                  <!-- Offline-first Block -->
+                  <div class="relative h-48 rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-center group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                    <div class="flex items-center gap-4 relative z-10">
+                      <div class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center border border-black/5 backdrop-blur-xl">
+                        <span class="material-symbols-outlined text-[#1D1D1F]">
+                          signal_wifi_off
+                        </span>
+                      </div>
+                      <div>
+                        <h3 class="text-[#1D1D1F] text-xl font-bold tracking-tight">
+                          Sincronización offline-first
+                        </h3>
+                        <p class="text-[#1D1D1F]/60 text-sm mt-1">
+                          Continuidad operativa total sin conexión.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="absolute bottom-0 right-0 p-4 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
+                      <span class="material-symbols-outlined text-black text-6xl">
+                        cloud_sync
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <section id="beneficios" class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-black overflow-hidden py-20">
+              <div class="px-10 lg:px-20 xl:px-40 mb-12">
+                <h2 class="text-white tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-4">
+                  Automatiza lo que hoy haces a mano
+                </h2>
+                <p class="text-white/60 text-lg max-w-2xl">
+                  Nuestra plataforma se encarga del trabajo pesado para que te enfoques en la obra.
+                </p>
+              </div>
+              <div id="carousel-container" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-8 px-10 md:px-20 pb-12 items-start">
+                <!-- Card 1: Extracción IA -->
+                <div class="flex-shrink-0 w-[50vw] snap-center">
+                  <div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/extraccion-ia-card.jpg');">
+                    </div>
+                  </div>
+                  <div class="max-w-2xl">
+                    <h3 class="text-white text-2xl font-bold mb-2 tracking-tight">
+                      Extracción IA de documentos.
+                    </h3>
+                    <p class="text-white/60 text-lg leading-relaxed">
+                      Procesa contratos y normativas automáticamente con precisión quirúrgica. Veloz por naturaleza.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 2: Analítica predictiva -->
+                <div class="flex-shrink-0 w-[50vw] snap-center">
+                  <div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/analitica-predictiva-card.jpg');">
+                    </div>
+                  </div>
+                  <div class="max-w-2xl">
+                    <h3 class="text-white text-2xl font-bold mb-2 tracking-tight">
+                      Analítica predictiva.
+                    </h3>
+                    <p class="text-white/60 text-lg leading-relaxed">
+                      Anticipa problemas de cumplimiento antes de que ocurran mediante modelos de riesgo avanzados. Claramente inconfundible.
+                    </p>
+                  </div>
+                </div>
+                <!-- Card 3: Sincronización offline-first -->
+                <div class="flex-shrink-0 w-[50vw] snap-center">
+                  <div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/offline-first-card.jpg');">
+                    </div>
+                  </div>
+                  <div class="max-w-2xl">
+                    <h3 class="text-white text-2xl font-bold mb-2 tracking-tight">
+                      Sincronización offline-first.
+                    </h3>
+                    <p class="text-white/60 text-lg leading-relaxed">
+                      Sigue trabajando sin conexión y sincroniza cuando tengas señal, garantizando la continuity operativa.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- Navigation Controls -->
+              <div class="flex justify-end gap-4 px-10 lg:px-20 xl:px-40 mt-4">
+                <button id="carousel-prev" class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                  <span class="material-symbols-outlined">
+                    chevron_left
+                  </span>
+                </button>
+                <button id="carousel-next" class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                  <span class="material-symbols-outlined">
+                    chevron_right
+                  </span>
+                </button>
+              </div>
+            </section>
+            <div class="flex flex-col md:flex-row gap-12 px-4 py-20 border-t border-[#e5dedc]">
+              <div class="flex flex-1 flex-col gap-4">
+                <p class="text-[#886d63] text-sm font-semibold uppercase tracking-widest">
+                  Eficiencia
+                </p>
+                <p class="text-[#181311] text-6xl font-black tracking-tighter">
+                  70%
+                </p>
+                <p class="text-[#181311] text-lg font-medium">
+                  Menos tiempo en registros
+                </p>
+              </div>
+              <div class="flex flex-1 flex-col gap-4">
+                <p class="text-[#886d63] text-sm font-semibold uppercase tracking-widest">
+                  Operación
+                </p>
+                <p class="text-[#181311] text-6xl font-black tracking-tighter">
+                  40%
+                </p>
+                <p class="text-[#181311] text-lg font-medium">
+                  Ahorro en costos administrativos
+                </p>
+              </div>
+              <div class="flex flex-1 flex-col gap-4">
+                <p class="text-[#886d63] text-sm font-semibold uppercase tracking-widest">
+                  Seguridad
+                </p>
+                <p class="text-[#181311] text-6xl font-black tracking-tighter">
+                  100%
+                </p>
+                <p class="text-[#181311] text-lg font-medium">
+                  Disponibilidad de documentos
+                </p>
+              </div>
+            </div>
+            <!-- Testimonials Section with Video -->
+            <section id="experiencia" class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-white py-24 border-t border-[#e5dedc]">
+              <div class="px-10 lg:px-20 xl:px-40 flex flex-col items-center">
+                <h2 class="text-[#1D1D1F] tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-16 text-center max-w-4xl mx-auto">
+                  Invitando a que pruebes la plataforma<br>
+                  y nos cuentes tu experiencia.
+                </h2>
+                <div class="flex flex-col items-center w-full max-w-5xl">
+                  <div class="relative w-full rounded-[32px] overflow-hidden shadow-2xl border border-black/5 mb-16">
+                    <video 
+                      id="testimonial-video"
+                      class="w-full h-auto object-cover"
+                      autoplay 
+                      loop 
+                      muted 
+                      playsinline
+                      poster="images/testimonio-facetime.jpg"
+                    >
+                      <source src="video/Facetime_video_call_construction…_202608232332.mp4" type="video/mp4">
+                      <!-- Fallback a imagen si el video no carga -->
+                      <img src="images/testimonio-facetime.jpg" alt="FaceTime call with project manager" class="w-full h-auto object-cover">
+                    </video>
+                  </div>
+                  <div class="max-w-3xl text-center">
+                    <p class="text-[#1D1D1F] text-2xl md:text-3xl leading-relaxed font-medium italic mb-8 tracking-tight">
+                      "Te invitamos a solicitar una video llamada con nosotros, te contaremos sobre nuestro servicio y podrás acceder a nuestra plataforma"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Final CTA Section -->
+            <section class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-black py-32 flex justify-center text-center">
+              <div class="max-w-3xl px-8 flex flex-col items-center">
+                <h2 class="text-white tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-6">
+                  ¿Listo para digitalizar la gestión normativa de tu obra?
+                </h2>
+                <p class="text-white/70 text-xl mb-12">
+                  Prueba nuestra plataforma sin costo. sin compromiso.
+                </p>
+                <button class="flex cursor-pointer items-center justify-center rounded-full h-14 px-8 bg-white/10 backdrop-blur-xl border border-white/20 text-white text-lg font-bold shadow-[0_4px_12px_rgba(0,0,0,0.15)] hover:bg-white/20 transition-colors">
+                  <span class="">
+                    Quiero probarla ahora
+                  </span>
+                </button>
+              </div>
+            </section>
+            <!-- Footer Section -->
+            <footer id="contacto" class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-[#111] py-16 border-t border-white/10">
+              <div class="px-10 lg:px-20 xl:px-40 flex flex-col md:flex-row justify-between gap-12 mb-16">
+                <div class="flex flex-col gap-6">
+                  <h3 class="text-white font-bold text-xl">
+                    coru
+                  </h3>
+                  <div class="flex flex-col gap-3">
+                    <p class="text-white/50 text-sm">
+                      Gestion Inteligente a travez de plataforma de apoyo a la gestión de prevencionistas de riesgo.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-6">
+                  <h3 class="text-white font-bold text-xl">
+                    Contacto
+                  </h3>
+                  <div class="flex flex-col gap-3">
+                    <a class="text-white/70 hover:text-white transition-colors text-sm" href="mailto:piloto@coru.cl">
+                      Email: piloto@coru.cl
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="px-10 lg:px-20 xl:px-40 border-t border-white/10 pt-8 flex justify-between items-center">
+                <p class="text-white/50 text-sm">
+                  © 2026 coru. Todos los derechos reservados.
+                </p>
+              </div>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Funcionalidad del carousel
+      document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('carousel-container');
+        const prevBtn = document.getElementById('carousel-prev');
+        const nextBtn = document.getElementById('carousel-next');
+        
+        if (carousel && prevBtn && nextBtn) {
+          // Obtener el ancho de una card (75vw)
+          const getCardWidth = () => {
+            const card = carousel.querySelector('.flex-shrink-0');
+            return card ? card.offsetWidth : 0;
+          };
+          
+          // Navegar a la siguiente card
+          nextBtn.addEventListener('click', () => {
+            const cardWidth = getCardWidth();
+            carousel.scrollBy({
+              left: cardWidth + 32, // cardWidth + gap (8 * 4px = 32px)
+              behavior: 'smooth'
+            });
+          });
+          
+          // Navegar a la card anterior
+          prevBtn.addEventListener('click', () => {
+            const cardWidth = getCardWidth();
+            carousel.scrollBy({
+              left: -(cardWidth + 32), // cardWidth + gap
+              behavior: 'smooth'
+            });
+          });
+        }
+        
+        // Funcionalidad del video hero
+        const heroVideo = document.getElementById('hero-video');
+        if (heroVideo) {
+          // Asegurar que el video se reproduzca en iOS Safari
+          heroVideo.play().catch(function(error) {
+            console.log('Hero video autoplay blocked:', error);
+            // Si el autoplay es bloqueado, el poster (placeholder) se mostrará
+          });
+          
+          // Reiniciar el video cuando termine (loop backup)
+          heroVideo.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+          });
+        }
+        
+        // Funcionalidad del video de testimonios
+        const testimonialVideo = document.getElementById('testimonial-video');
+        if (testimonialVideo) {
+          // Asegurar que el video se reproduzca en iOS Safari
+          testimonialVideo.play().catch(function(error) {
+            console.log('Testimonial video autoplay blocked:', error);
+            // Si el autoplay es bloqueado, el poster (placeholder) se mostrará
+          });
+          
+          // Reiniciar el video cuando termine (loop backup)
+          testimonialVideo.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
