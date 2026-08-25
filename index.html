@@ -263,11 +263,11 @@
                           Automatización, trazabilidad total y sincronización offline para que la obra nunca se detenga.
                         </h2>
                       </div>
-                      <div class="flex items-center gap-4 rounded-full bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-3 shadow-xl shrink-0">
-                        <span class="text-white/90 text-sm font-medium whitespace-nowrap">
+                      <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 rounded-3xl sm:rounded-full bg-white/5 backdrop-blur-xl border border-white/10 px-6 py-4 sm:py-3 shadow-xl shrink-0 w-full sm:w-auto">
+                        <span class="text-white/90 text-sm font-medium whitespace-nowrap text-center">
                           Comienza a optimizar tu obra
                         </span>
-                        <a href="/demo" class="flex cursor-pointer items-center justify-center rounded-full h-10 px-6 bg-white/90 hover:bg-white text-[#181311] text-sm font-semibold shadow-lg hover:shadow-xl transition-all">
+                        <a href="/demo" class="flex cursor-pointer items-center justify-center rounded-full h-11 sm:h-10 w-full sm:w-auto px-8 sm:px-6 bg-white/90 hover:bg-white text-[#181311] text-sm font-semibold shadow-lg hover:shadow-xl transition-all">
                           <span class="truncate">
                             Prueba gratis
                           </span>
@@ -280,7 +280,7 @@
             </div>
             <!-- Updated Bento Grid Problem Section (White background) -->
             <div id="solucion" class="flex flex-col gap-12 px-4 py-20 @container bg-white -ml-[50vw] -mr-[50vw] left-1/2 right-1/2 relative w-screen border-b border-[#e5dedc]">
-              <div class="flex flex-col gap-4 px-10 lg:px-20 xl:px-40">
+              <div class="flex flex-col gap-4 px-[7.5vw] md:px-10 lg:px-20 xl:px-40">
                 <h2 class="text-[#1D1D1F] tracking-tight text-4xl font-bold @[480px]:text-5xl @[768px]:text-6xl mb-4">
                   El costo oculto de la gestión manual
                 </h2>
@@ -288,9 +288,9 @@
                   Elimina los riesgos y sobrecostos de la administración tradicional con tecnología de vanguardia.
                 </p>
               </div>
-              <div class="grid grid-cols-1 md:grid-cols-12 gap-6 px-10 lg:px-20 xl:px-40">
+              <div id="solucion-carousel" class="relative flex md:grid md:grid-cols-12 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar px-[7.5vw] md:px-10 lg:px-20 xl:px-40 pb-4 md:pb-0 items-start">
                 <!-- Large Featured Block: ID Scanning -->
-                <div class="md:col-span-7 relative aspect-[4/3] rounded-[32px] overflow-hidden border border-black/10 bg-gray-50 group">
+                <div class="solucion-slide w-[85vw] md:w-auto shrink-0 snap-center md:snap-none md:col-span-7 relative aspect-[4/3] rounded-[32px] overflow-hidden border border-black/10 bg-gray-50 group">
                   <div class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-700 group-hover:scale-105" style="background-image: url('images/extraccion-ia.jpg');">
                   </div>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
@@ -309,10 +309,10 @@
                     </p>
                   </div>
                 </div>
-                <!-- Right Column: Two smaller blocks -->
-                <div class="md:col-span-5 flex flex-col gap-6">
+                <!-- Right Column: Two smaller blocks (en móvil se aplana para que cada block sea un slide) -->
+                <div class="contents md:flex md:flex-col md:gap-6 md:col-span-5">
                   <!-- Predictive Alerts Block -->
-                  <div class="relative flex-1 rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-between group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                  <div class="solucion-slide w-[85vw] md:w-auto shrink-0 snap-center md:snap-none min-h-[64vw] md:min-h-0 md:flex-1 relative rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-between group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     <div class="relative z-10">
                       <div class="flex items-center gap-3 mb-3">
                         <span class="material-symbols-outlined text-[#1D1D1F]">
@@ -331,7 +331,7 @@
                     </div>
                   </div>
                   <!-- Offline-first Block -->
-                  <div class="relative h-48 rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-center group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+                  <div class="solucion-slide w-[85vw] md:w-auto shrink-0 snap-center md:snap-none min-h-[64vw] md:min-h-0 relative h-48 rounded-[32px] overflow-hidden border border-black/10 bg-white p-8 flex flex-col justify-center group shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
                     <div class="flex items-center gap-4 relative z-10">
                       <div class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center border border-black/5 backdrop-blur-xl">
                         <span class="material-symbols-outlined text-[#1D1D1F]">
@@ -353,6 +353,11 @@
                       </span>
                     </div>
                   </div>
+                </div>
+              </div>
+              <!-- Indicador de puntos (solo móvil) -->
+              <div class="flex md:hidden justify-center mt-2">
+                <div id="solucion-dots" class="flex items-center gap-2 rounded-full bg-[#1D1D1F]/5 px-4 py-3" role="tablist" aria-label="Seleccionar tarjeta">
                 </div>
               </div>
             </div>
@@ -576,6 +581,138 @@
           });
         }
         
+        // ===== Carrusel móvil: "El costo oculto de la gestión manual" =====
+        const solucionCarousel = document.getElementById('solucion-carousel');
+        const solucionDots = document.getElementById('solucion-dots');
+
+        if (solucionCarousel && solucionDots) {
+          const slides = Array.from(solucionCarousel.querySelectorAll('.solucion-slide'));
+          const mobileQuery = window.matchMedia('(max-width: 767px)');
+          const AUTOPLAY_DELAY = 4000; // Avanza automáticamente tras un tiempo corto
+          let currentIndex = 0;
+          let autoplayTimer = null;
+          let scrollSettleTimer = null;
+          let scrollRaf = null;
+          let isInteracting = false;
+          let isInView = false;
+          const dots = [];
+
+          // Crear un punto indicador por cada tarjeta
+          slides.forEach(function(slide, index) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.setAttribute('role', 'tab');
+            dot.setAttribute('aria-label', 'Ir a la tarjeta ' + (index + 1));
+            dot.className = 'h-2 w-2 rounded-full bg-[#1D1D1F]/20 transition-all duration-300';
+            dot.addEventListener('click', function() {
+              goToSlide(index);
+              startAutoplay();
+            });
+            solucionDots.appendChild(dot);
+            dots.push(dot);
+          });
+
+          const updateDots = function() {
+            dots.forEach(function(dot, index) {
+              const isActive = index === currentIndex;
+              dot.classList.toggle('w-6', isActive);
+              dot.classList.toggle('w-2', !isActive);
+              dot.classList.toggle('bg-[#1D1D1F]', isActive);
+              dot.classList.toggle('bg-[#1D1D1F]/20', !isActive);
+              dot.setAttribute('aria-selected', String(isActive));
+            });
+          };
+
+          // Centrar una tarjeta en el carrusel
+          const goToSlide = function(index, smooth) {
+            const slide = slides[index];
+            if (!slide) return;
+            currentIndex = index;
+            solucionCarousel.scrollTo({
+              left: slide.offsetLeft - (solucionCarousel.clientWidth - slide.offsetWidth) / 2,
+              behavior: smooth === false ? 'auto' : 'smooth'
+            });
+            updateDots();
+          };
+
+          const stopAutoplay = function() {
+            if (autoplayTimer) {
+              clearInterval(autoplayTimer);
+              autoplayTimer = null;
+            }
+          };
+
+          const startAutoplay = function() {
+            stopAutoplay();
+            if (!mobileQuery.matches || document.hidden || !isInView || isInteracting) return;
+            autoplayTimer = setInterval(function() {
+              goToSlide((currentIndex + 1) % slides.length);
+            }, AUTOPLAY_DELAY);
+          };
+
+          // Sincronizar los puntos cuando el usuario desliza con el dedo
+          solucionCarousel.addEventListener('scroll', function() {
+            if (scrollRaf) return;
+            scrollRaf = requestAnimationFrame(function() {
+              scrollRaf = null;
+              const center = solucionCarousel.scrollLeft + solucionCarousel.clientWidth / 2;
+              let closest = 0;
+              let minDistance = Infinity;
+              slides.forEach(function(slide, index) {
+                const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+                const distance = Math.abs(slideCenter - center);
+                if (distance < minDistance) {
+                  minDistance = distance;
+                  closest = index;
+                }
+              });
+              if (closest !== currentIndex) {
+                currentIndex = closest;
+                updateDots();
+              }
+              // Al terminar el deslizamiento, reanudar el avance automático
+              clearTimeout(scrollSettleTimer);
+              scrollSettleTimer = setTimeout(function() {
+                isInteracting = false;
+                startAutoplay();
+              }, 200);
+            });
+          }, { passive: true });
+
+          // Pausar mientras el usuario está tocando el carrusel
+          ['touchstart', 'pointerdown'].forEach(function(eventName) {
+            solucionCarousel.addEventListener(eventName, function() {
+              isInteracting = true;
+              stopAutoplay();
+            }, { passive: true });
+          });
+
+          // Avanzar solo cuando la sección está visible en pantalla
+          if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function(entries) {
+              isInView = entries[0].isIntersecting;
+              startAutoplay();
+            }, { threshold: 0.3 }).observe(solucionCarousel);
+          } else {
+            isInView = true;
+            startAutoplay();
+          }
+
+          // Pausar si la pestaña queda en segundo plano
+          document.addEventListener('visibilitychange', startAutoplay);
+
+          // Recentrar la tarjeta actual si cambia el tamaño
+          window.addEventListener('resize', function() {
+            if (mobileQuery.matches) {
+              goToSlide(currentIndex, false);
+            }
+            startAutoplay();
+          });
+
+          updateDots();
+          startAutoplay();
+        }
+
         // Funcionalidad del video hero
         const heroVideo = document.getElementById('hero-video');
         if (heroVideo) {
