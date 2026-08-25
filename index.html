@@ -291,7 +291,10 @@
               <div id="solucion-carousel" class="relative flex md:grid md:grid-cols-12 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory hide-scrollbar px-[7.5vw] md:px-10 lg:px-20 xl:px-40 pb-4 md:pb-0 items-start">
                 <!-- Large Featured Block: ID Scanning -->
                 <div class="solucion-slide w-[85vw] md:w-auto shrink-0 snap-center md:snap-none md:col-span-7 relative aspect-[4/3] rounded-[32px] overflow-hidden border border-black/10 bg-gray-50 group">
-                  <div class="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-700 group-hover:scale-105" style="background-image: url('images/extraccion-ia.jpg');">
+                  <!-- Imagen para celular/iPhone (< 768px): reemplaza images/extraccion-ia-movil.jpg por la versión vertical; si no existe, usa la de escritorio -->
+                  <img alt="Extracción IA de documentos en obra" class="absolute inset-0 h-full w-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-105 md:hidden" src="images/extraccion-ia-movil.jpg" onerror="this.onerror=null;this.src='images/extraccion-ia.jpg';">
+                  <!-- Imagen para tablet/escritorio (>= 768px) -->
+                  <div class="absolute inset-0 hidden md:block bg-cover bg-center opacity-90 transition-transform duration-700 group-hover:scale-105" style="background-image: url('images/extraccion-ia.jpg');">
                   </div>
                   <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent">
                   </div>
@@ -370,48 +373,48 @@
                   Nuestra plataforma se encarga del trabajo pesado para que te enfoques en la obra.
                 </p>
               </div>
-              <div id="carousel-container" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-8 px-10 md:px-20 pb-12 items-start">
+              <div id="carousel-container" class="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-5 px-5 md:px-20 pb-12 items-start">
                 <!-- Card 1: Extracción IA -->
-                <div class="flex-shrink-0 w-[50vw] snap-center">
-                  <div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+                <div class="flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] snap-center">
+                  <div class="relative aspect-[4/3] rounded-[28px] md:rounded-[32px] overflow-hidden border border-white/10 mb-5">
                     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/extraccion-ia-card.jpg');">
                     </div>
                   </div>
-                  <div class="max-w-2xl">
-                    <h3 class="text-white text-2xl font-bold mb-2 tracking-tight">
+                  <div>
+                    <h3 class="text-white text-xl md:text-2xl font-bold mb-2 tracking-tight leading-snug">
                       Extracción IA de documentos.
                     </h3>
-                    <p class="text-white/60 text-lg leading-relaxed">
+                    <p class="text-white/60 text-sm md:text-base leading-relaxed">
                       Procesa contratos y normativas automáticamente con precisión quirúrgica. Veloz por naturaleza.
                     </p>
                   </div>
                 </div>
                 <!-- Card 2: Analítica predictiva -->
-                <div class="flex-shrink-0 w-[50vw] snap-center">
-                  <div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+                <div class="flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] snap-center">
+                  <div class="relative aspect-[4/3] rounded-[28px] md:rounded-[32px] overflow-hidden border border-white/10 mb-5">
                     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/analitica-predictiva-card.jpg');">
                     </div>
                   </div>
-                  <div class="max-w-2xl">
-                    <h3 class="text-white text-2xl font-bold mb-2 tracking-tight">
+                  <div>
+                    <h3 class="text-white text-xl md:text-2xl font-bold mb-2 tracking-tight leading-snug">
                       Analítica predictiva.
                     </h3>
-                    <p class="text-white/60 text-lg leading-relaxed">
+                    <p class="text-white/60 text-sm md:text-base leading-relaxed">
                       Anticipa problemas de cumplimiento antes de que ocurran mediante modelos de riesgo avanzados. Claramente inconfundible.
                     </p>
                   </div>
                 </div>
                 <!-- Card 3: Sincronización offline-first -->
-                <div class="flex-shrink-0 w-[50vw] snap-center">
-                  <div class="relative aspect-video rounded-[32px] overflow-hidden border border-white/10 mb-8">
+                <div class="flex-shrink-0 w-[75vw] md:w-[40vw] lg:w-[30vw] snap-center">
+                  <div class="relative aspect-[4/3] rounded-[28px] md:rounded-[32px] overflow-hidden border border-white/10 mb-5">
                     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/offline-first-card.jpg');">
                     </div>
                   </div>
-                  <div class="max-w-2xl">
-                    <h3 class="text-white text-2xl font-bold mb-2 tracking-tight">
+                  <div>
+                    <h3 class="text-white text-xl md:text-2xl font-bold mb-2 tracking-tight leading-snug">
                       Sincronización offline-first.
                     </h3>
-                    <p class="text-white/60 text-lg leading-relaxed">
+                    <p class="text-white/60 text-sm md:text-base leading-relaxed">
                       Sigue trabajando sin conexión y sincroniza cuando tengas señal, garantizando la continuity operativa.
                     </p>
                   </div>
