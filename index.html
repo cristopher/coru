@@ -559,29 +559,37 @@
         const nextBtn = document.getElementById('carousel-next');
         
         if (carousel && prevBtn && nextBtn) {
-          // Obtener el ancho de una card (75vw)
           const getCardWidth = () => {
             const card = carousel.querySelector('.flex-shrink-0');
             return card ? card.offsetWidth : 0;
           };
-          
-          // Navegar a la siguiente card
+
+          const updateCarouselButtons = () => {
+            const scrollLeft = carousel.scrollLeft;
+            const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+            const atStart = scrollLeft <= 2;
+            const atEnd = scrollLeft >= maxScroll - 2;
+            prevBtn.disabled = atStart;
+            nextBtn.disabled = atEnd;
+            prevBtn.classList.toggle('opacity-30', atStart);
+            prevBtn.classList.toggle('pointer-events-none', atStart);
+            nextBtn.classList.toggle('opacity-30', atEnd);
+            nextBtn.classList.toggle('pointer-events-none', atEnd);
+          };
+
           nextBtn.addEventListener('click', () => {
             const cardWidth = getCardWidth();
-            carousel.scrollBy({
-              left: cardWidth + 32, // cardWidth + gap (8 * 4px = 32px)
-              behavior: 'smooth'
-            });
+            carousel.scrollBy({ left: cardWidth + 20, behavior: 'smooth' });
           });
-          
-          // Navegar a la card anterior
+
           prevBtn.addEventListener('click', () => {
             const cardWidth = getCardWidth();
-            carousel.scrollBy({
-              left: -(cardWidth + 32), // cardWidth + gap
-              behavior: 'smooth'
-            });
+            carousel.scrollBy({ left: -(cardWidth + 20), behavior: 'smooth' });
           });
+
+          carousel.addEventListener('scroll', updateCarouselButtons);
+          window.addEventListener('load', updateCarouselButtons);
+          setTimeout(updateCarouselButtons, 100);
         }
         
         // ===== Carrusel móvil: "El costo oculto de la gestión manual" =====
