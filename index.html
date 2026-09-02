@@ -421,20 +421,38 @@
                 </div>
               </div>
               <!-- Navigation Controls -->
-              <div class="flex justify-end gap-4 px-10 lg:px-20 xl:px-40 mt-4">
-                <button id="carousel-prev" class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
-                  <span class="material-symbols-outlined">
+              <div class="flex justify-center lg:justify-end gap-3 lg:gap-4 px-6 lg:px-10 lg:px-20 xl:px-40 mt-4 lg:mt-6 pb-8">
+                <button id="carousel-prev" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                  <span class="material-symbols-outlined text-base lg:text-xl">
                     chevron_left
                   </span>
                 </button>
-                <button id="carousel-next" class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
-                  <span class="material-symbols-outlined">
+                <button id="carousel-next" class="w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white hover:bg-white/20 transition-colors">
+                  <span class="material-symbols-outlined text-base lg:text-xl">
                     chevron_right
                   </span>
                 </button>
               </div>
             </section>
-            <div class="flex flex-col md:flex-row gap-12 px-4 py-20 border-t border-[#e5dedc]">
+            <!-- AWS Startups Banner -->
+            <section class="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] bg-gradient-to-r from-black via-[#000033] to-[#001a66] py-12 px-6 overflow-hidden">
+              <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 px-4 md:px-6 lg:px-8">
+                <!-- Logo AWS a la izquierda -->
+                <div class="flex-shrink-0 w-32 md:w-40 lg:w-48">
+                  <img src="images/AWS-logo.png" alt="AWS Logo" class="w-full h-auto object-contain opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+                <!-- Texto de acreditación -->
+                <div class="flex-1 text-center md:text-left">
+                  <p class="text-white/90 text-lg md:text-xl lg:text-2xl font-medium leading-relaxed">
+                    Nuestro emprendimiento está siendo acelerado por <span class="text-white font-bold">AWS Startups</span>
+                  </p>
+                </div>
+              </div>
+              <!-- Decoración sutil con gradiente -->
+              <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-[#000033]/20 to-transparent pointer-events-none"></div>
+            </section>
+            <!-- Stats Section -->
+            <div class="flex flex-col md:flex-row gap-12 px-10 lg:px-20 xl:px-40 py-16 border-t border-[#e5dedc] bg-[#f8f6f6] -ml-[50vw] -mr-[50vw] left-1/2 right-1/2 relative w-screen">
               <div class="flex flex-1 flex-col gap-4">
                 <p class="text-[#886d63] text-sm font-semibold uppercase tracking-widest">
                   Eficiencia
